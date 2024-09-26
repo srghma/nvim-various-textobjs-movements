@@ -1,6 +1,6 @@
 local M = {}
 
-local u = require("various-textobjs.utils")
+local u = require("various-textobjs-movements.utils")
 --------------------------------------------------------------------------------
 
 -- Get the position of the first non-whitespace character

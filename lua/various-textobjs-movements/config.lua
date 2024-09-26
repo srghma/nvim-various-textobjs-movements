@@ -1,11 +1,10 @@
 local M = {}
 --------------------------------------------------------------------------------
 ---@class config
----@field lookForwardSmall? number
----@field lookForwardBig? number
----@field useDefaultKeymaps? boolean
----@field disabledKeymaps? string[]
----@field notifyNotFound? boolean
+---@field go_to_indentation_top_withBlanks? string
+---@field go_to_indentation_bottom_withBlanks? string
+---@field go_to_indentation_top_noBlanks? string
+---@field go_to_indentation_bottom_noBlanks? string
 
 ---@type config
 local defaultConfig = {
@@ -21,9 +20,7 @@ M.config = defaultConfig
 function M.setup(userConfig)
 	M.config = vim.tbl_deep_extend("force", M.config, userConfig or {})
 
-	if M.config.useDefaultKeymaps then
-		require("various-textobjs.default-keymaps").setup(M.config)
-	end
+	require("various-textobjs-movements.default-keymaps").setup(M.config)
 end
 
 --------------------------------------------------------------------------------

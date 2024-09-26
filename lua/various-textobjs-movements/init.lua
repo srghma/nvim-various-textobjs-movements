@@ -2,7 +2,9 @@ local M = {}
 
 ---optional setup function
 ---@param userConfig? config
-function M.setup(userConfig) require("various-textobjs.config").setup(userConfig) end
+function M.setup(userConfig)
+	require("various-textobjs-movements.config").setup(userConfig)
+end
 
 --------------------------------------------------------------------------------
 
@@ -11,7 +13,7 @@ setmetatable(M, {
 	__index = function(_, key)
 		return function(scope)
 			local module = "movements"
-			require("various-textobjs." .. module)[key](scope)
+			require("various-textobjs-movements." .. module)[key](scope)
 		end
 	end,
 })
