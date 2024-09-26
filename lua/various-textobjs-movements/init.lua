@@ -2,7 +2,9 @@ local M = {}
 
 ---optional setup function
 ---@param userConfig? config
-function M.setup(userConfig) require("various-textobjs-movements.config").setup(userConfig) end
+function M.setup(userConfig)
+	require("various-textobjs-movements.config").setup(userConfig)
+end
 
 --------------------------------------------------------------------------------
 
